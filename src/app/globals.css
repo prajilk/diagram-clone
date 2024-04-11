@@ -4,9 +4,9 @@
 @tailwind components;
 @tailwind utilities;
 
-* {
+/* * {
   scroll-behavior: smooth;
-}
+} */
 
 body {
   font-family: Satoshi, "sans-serif";

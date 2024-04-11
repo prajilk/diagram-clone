@@ -12,9 +12,23 @@ import Orbit7 from "@/utils/svgs/orbit-7";
 
 import { motion } from "framer-motion";
 import { planetAnimation, solarCenter } from "@/utils/motion-variants";
-import Link from "next/link";
+import { useEffect, useRef } from "react";
+import Lenis from "@studio-freight/lenis";
 
 const Solar = () => {
+  const lenisRef = useRef<Lenis | null>(null);
+
+  useEffect(() => {
+    lenisRef.current = new Lenis();
+
+    function raf(time: number) {
+      lenisRef.current?.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
+
   return (
     <div className="flex min-h-[40rem] w-full items-center justify-center">
       <div className="relative flex size-36 items-center justify-center lg:size-48">
@@ -26,8 +40,8 @@ const Solar = () => {
           className="size-36 lg:size-48"
         >
           <div className="absolute -bottom-2 size-full rounded-full bg-[#656566]"></div>
-          <Link
-            href="#magician"
+          <div
+            onClick={() => lenisRef.current?.scrollTo("#magician")}
             className="absolute z-10 flex size-full cursor-pointer items-center justify-end rounded-full bg-[linear-gradient(#fff,#cfcfcf)] duration-300 active:translate-y-2"
           >
             <div className="relative mr-3 h-[100px] w-[60px] lg:mr-5 lg:h-[150px] lg:w-[70px]">
@@ -39,7 +53,7 @@ const Solar = () => {
                 priority
               />
             </div>
-          </Link>
+          </div>
         </motion.div>
 
         {/* Orbit 1 */}

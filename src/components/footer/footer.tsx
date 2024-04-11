@@ -1,8 +1,23 @@
 import Image from "next/image";
 import LightButton from "../common/button/light-button";
 import Link from "next/link";
+import { useEffect, useRef } from "react";
+import Lenis from "@studio-freight/lenis";
 
 const Footer = () => {
+  const lenisRef = useRef<Lenis | null>(null);
+
+  useEffect(() => {
+    lenisRef.current = new Lenis();
+
+    function raf(time: number) {
+      lenisRef.current?.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+  }, []);
+
   return (
     <footer className="container relative mt-28 w-full overflow-hidden">
       <div className="relative z-10 grid grid-cols-3 py-20 lg:grid-cols-4">
@@ -25,9 +40,19 @@ const Footer = () => {
           <span>Products</span>
           <ul className="space-y-5 text-white/50">
             <li className="w-fit cursor-pointer hover:text-white">Genius</li>
-            <li className="w-fit cursor-pointer hover:text-white">Magician</li>
+            <li
+              className="w-fit cursor-pointer hover:text-white"
+              onClick={() => lenisRef.current?.scrollTo("#magician")}
+            >
+              Magician
+            </li>
             <li className="w-fit cursor-pointer hover:text-white">Automator</li>
-            <li className="w-fit cursor-pointer hover:text-white">UI-AI</li>
+            <li
+              className="w-fit cursor-pointer hover:text-white"
+              onClick={() => lenisRef.current?.scrollTo("#ui-au")}
+            >
+              UI-AI
+            </li>
           </ul>
         </div>
 

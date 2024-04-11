@@ -10,7 +10,7 @@ const UIAI = () => {
   return (
     <>
       <div
-        id="#ui-ai"
+        id="ui-ai"
         className="relative z-10 mx-auto flex w-full flex-col items-center py-24 pb-0 lg:w-[600px]"
       >
         <motion.span
