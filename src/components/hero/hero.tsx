@@ -8,7 +8,8 @@ const Hero = () => {
           Design tools <br className="lg:hidden" /> from the future.
         </h1>
         <p className="mb-5 text-center text-lg text-[#bdbdc0] lg:mb-10 lg:text-xl">
-          Unleash your creativity with Diagram's <br /> AI-powered design tools.
+          Unleash your creativity with Diagram&apos;s <br /> AI-powered design
+          tools.
         </p>
         <LightButton
           startIcon="/icons/logo.png"

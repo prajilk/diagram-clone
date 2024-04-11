@@ -78,7 +78,7 @@ const MagicCopyrights = () => {
             clipPath: `polygon(0 0, ${widthPercentage + 3}% 0, ${widthPercentage + 5}% 100%, 0 100%)`,
           }}
         >
-          It's Magical.
+          It&apos;s Magical.
         </h1>
 
         {/* Magic wand */}

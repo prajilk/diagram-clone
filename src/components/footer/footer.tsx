@@ -10,7 +10,7 @@ const Footer = () => {
           <span className="flex items-center gap-2 text-lg font-bold">
             <img
               src="/icons/logo.png"
-              alt=""
+              alt="Logo"
               className="size-5 brightness-100 invert"
             />
             Diagram
