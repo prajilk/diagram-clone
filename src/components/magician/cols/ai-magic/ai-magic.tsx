@@ -32,6 +32,7 @@ const AIMagic = () => {
           variants={starVariants1(isHover)}
           transition={{
             duration: 0.5,
+            delay: isHover ? 0 : 0.7,
           }}
           src="/assets/star.png"
           alt="Star"
@@ -45,7 +46,7 @@ const AIMagic = () => {
           variants={starVariants2(isHover)}
           transition={{
             duration: 0.5,
-            delay: 0.2,
+            delay: isHover ? 0.2 : 0.9,
           }}
           src="/assets/star.png"
           alt="Star"
@@ -59,7 +60,7 @@ const AIMagic = () => {
           initial="initial"
           animate="animate"
           variants={magicWandVariants(isHover)}
-          transition={{ duration: 0.8, delay: 0.3 }}
+          transition={{ duration: 0.8, delay: isHover ? 0.3 : 0.5 }}
           className="absolute bottom-0 left-0 flex h-3/4 w-10 -translate-x-full flex-col"
         >
           <div className="h-20 w-full rounded-t-lg bg-[linear-gradient(#cfdcf1_1%,#fff_13%,#fff_59%,#dfe6f1_92%,#d4ddec_96%)]"></div>
